@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Polls App</title>
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+<div class="header_cont">
+	<header>
+		<nav>
+			<ul>
+				<li><a href="{% url 'poll:index'%}">Home</a></li>
+				<li><a href="{% url 'todo:todo_list' %}">Todo App</a></li>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+</div>
+<div class="container">
+	{% block body %} {% endblock %}
+</div>
+
+
+<div class="footer">
+	<footer>
+		<span>&copy; 2020 All rights reserved. Polls App | Developed by Toseef <a href="https://instagram.com/toseef.hasan" target="_blank">Privacy Policy</a></span>
+	</footer>
+</div>
+</body>
+</html>

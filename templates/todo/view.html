@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% if todo %}
+  <div class="jumbotron">
+    <h1 class="display-4">{{ todo.title }}</h1>
+    <p class="lead">{{ todo.description }}</p>
+    <p>Date Posted: {{ todo.date }}</p>
+    <p>Completed: {%  if todo.completed %}Yes {% else %}No{% endif %}</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{% url 'todo:todo_list' %}">Back To List</a>
+    <a class="btn btn-danger btn-lg" href="{% url 'todo:ConfirmDelete' todo.id %}">Delete</a>
+  </div>
+{% endif %}
+{% endblock %}
