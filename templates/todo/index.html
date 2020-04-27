@@ -2,24 +2,24 @@
 
 {% block content %}
   {% if todos %}
-    <table class="table mt-5">
+    <table class="table table-bordered mt-5">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Completed</th>
-          <th scope="col">Date</th>
-          <th scope="col">Actions</th>
+          <th class="text-center" scope="col">Title</th>
+          <th class="text-center" scope="col">Completed</th>
+          <th class="text-center" scope="col">Date</th>
+          <th class="text-center" scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         {% for todo in todos %}
           <tr>
             <th scope="row">{{ todo.id }}</th>
-            <td>{{ todo.title }}</td>
-            <td>{% if todo.completed %}Yes{% else %}No {% endif %}</td>
-            <td>{{ todo.date }}</td>
-            <td><a href="{% url 'todo:todo' todo.id %}" class="btn btn-primary text-light">View</a>
+            <td class="{% if todo.completed %}done{% endif %}">{{ todo.title }}</td>
+            <td class="text-center">{% if todo.completed %}Yes{% else %}No {% endif %}</td>
+            <td class="text-center">{{ todo.date }}</td>
+            <td class="text-center"><a href="{% url 'todo:todo' todo.id %}" class="btn btn-primary text-light">View</a>
             <a href="{% url 'todo:updateform' todo.id %}" class="btn btn-secondary text-light">Edit</a>
             <a href="{% url 'todo:ConfirmDelete' todo.id %}" class="btn btn-danger text-light">Delete</a>
           </tr>

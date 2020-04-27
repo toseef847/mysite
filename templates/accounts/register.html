@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html' %}
+<form class="register" action="{% url 'accounts:register' %}" method="post">
+  {% csrf_token %}
+  <div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" class="form-control" maxlength="100" required>
+    </div>
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname" class="form-control" maxlength="50">
+    </div>
+    <div class="form-group">
+      <label for="title">Last Name</label>
+      <input type="text" name="lastname" class="form-control" maxlength="50">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" name="email" class="form-control" maxlength="100" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="pw1" type="password" name="password" class="form-control" required>
+      <span id="pw_err" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+      <label for="password2">Confirm Password</label>
+      <input id="pw2" type="password" name="password2" class="form-control" required>
+    </div>
+    <input id="btn_reg" type="submit" value="Register" class="btn btn-primary">
+    <br><small>Already have an account? <a href="{% url 'accounts:login' %}">Login</a> here.</small>
+  </div>
+</form>
+{% endblock %}

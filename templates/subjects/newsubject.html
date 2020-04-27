@@ -1,0 +1,28 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html'%}
+<form class="register newsubject" action="{% url 'subjects:newsubject' %}" method="post">
+  {% csrf_token %}
+  <div>
+    <div class="form-group">
+      <label for="subjectcode">Subject Code</label>
+      <input type="text" name="subjectcode" class="form-control" maxlength="50" required>
+    </div>
+    <div class="form-group">
+      <label for="subjectname">Subject Name</label>
+      <input type="text" name="subjectname" class="form-control" maxlength="50" required>
+    </div>
+    <div class="form-group">
+      <label for="subjectname">Class</label>
+      <select class="form-control" name="_class">
+        {% for class in classes %}
+        <option value="{{ class.id }}">{{ class.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <input id="btn_reg" type="submit" value="Create" class="btn btn-primary">
+  </div>
+</form>
+{% endblock %}

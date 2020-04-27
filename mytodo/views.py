@@ -63,6 +63,5 @@ def ConfirmDelete(request, todo_id):
 
 # Delete a todo
 def delete(request, todo_id):
-    todo = Todo.objects.get(pk = todo_id)
-    todo.delete()
+    todo = Todo.objects.get(pk = todo_id).delete()
     return redirect('todo:todo_list')

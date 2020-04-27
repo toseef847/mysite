@@ -1,0 +1,72 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html'%}
+  <h1 class="display-6 text-center">Subjects</h1>
+  {% if subjects %}
+    {% for subject in subjects %}
+    <p>{{ subject.name }}</p>
+    {% endfor %}
+  {% else %}
+    <p class="text-center">No subjects to display, create a class first then add subjects</p>
+    <a class="btn btn-primary text-light" href="{% url 'subjects:newsubject' %}">New Subject</a>
+  {% endif %}
+  <a class="btn btn-primary text-light" href="{% url 'subjects:newsubject' %}">New Subject</a>
+
+  <!-- <table class="table table-bordered mt-5">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th class="text-center" scope="col">Name</th>
+          <th class="text-center" scope="col">Class</th>
+          <th class="text-center" scope="col">Roll no</th>
+          <th class="text-center" scope="col">Attendance</th>
+          <th class="text-center" scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td class="">Toseef Hasan</td>
+            <td class="text-center">BSIT(Eve)-A</td>
+            <td class="text-center">BSF1600847</td>
+            <td class="text-center">Present</td>
+            <td class="text-center"><a href="" class="btn btn-primary text-light">View</a>
+            <a href="" class="btn btn-secondary text-light">Edit</a>
+            <a href="" class="btn btn-danger text-light">Delete</a>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td class="">Muhammad Qasim</td>
+            <td class="text-center">BSIT(Eve)-A</td>
+            <td class="text-center">BSF1600853</td>
+            <td class="text-center">Present</td>
+            <td class="text-center"><a href="" class="btn btn-primary text-light">View</a>
+            <a href="" class="btn btn-secondary text-light">Edit</a>
+            <a href="" class="btn btn-danger text-light">Delete</a>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td class="">Tusneem Anwar</td>
+            <td class="text-center">BSIT(Eve)-A</td>
+            <td class="text-center">BSF1600859</td>
+            <td class="text-center">Present</td>
+            <td class="text-center"><a href="" class="btn btn-primary text-light">View</a>
+            <a href="" class="btn btn-secondary text-light">Edit</a>
+            <a href="" class="btn btn-danger text-light">Delete</a>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td class="">Anisa Muzammal</td>
+            <td class="text-center">BSIT(Eve)-A</td>
+            <td class="text-center">BSF1600860</td>
+            <td class="text-center">Present</td>
+            <td class="text-center"><a href="" class="btn btn-primary text-light">View</a>
+            <a href="" class="btn btn-secondary text-light">Edit</a>
+            <a href="" class="btn btn-danger text-light">Delete</a>
+          </tr>
+      </tbody>
+  </table> -->
+
+{% endblock %}

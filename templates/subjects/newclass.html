@@ -1,0 +1,17 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html'%}
+  <h1 class="display-6 text-center">New Class</h1>
+  <form class="register newclass" action="{% url 'subjects:newclass' %}" method="post">
+    {% csrf_token %}
+    <div>
+      <div class="form-group">
+        <label for="classname">Class Name</label>
+        <input type="text" name="classname" class="form-control" maxlength="50" required>
+      </div>
+      <input id="btn_reg" type="submit" value="Create" class="btn btn-primary">
+    </div>
+  </form>
+{% endblock %}

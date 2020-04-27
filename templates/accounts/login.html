@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html' %}
+<form class="login" action="{% url 'accounts:login' %}" method="post">
+  {% csrf_token %}
+  <div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" class="form-control" maxlength="100" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" class="form-control" required>
+    </div>
+    <input type="submit" value="Register" class="btn btn-primary">
+    <br><small>Don't have an account? <a href="{% url 'accounts:register' %}">Sign up</a> here.</small>
+  </div>
+</form>
+{% endblock %}

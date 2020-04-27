@@ -81,3 +81,35 @@ nav > ul > li > a::before, nav > ul > li > a::after {
     width: 100%;
     letter-spacing: 3px;
 }
+form.register,form.login {
+	background: #eee;
+	padding: 30px;
+	width: 50%;
+	margin: 30px auto;
+	border-radius: 7px;
+}
+.done{
+  text-decoration: line-through;
+}
+/* @media (min-width: 768px){
+
+  form.register,form.login {
+  	background: #eee;
+  	padding: 30px;
+  	width: 100%;
+  	margin: 30px auto;
+  	border-radius: 7px;
+  }
+
+}
+@media (min-width: 320px){
+
+  form.register, form.login {
+  	background: #eee;
+  	padding: 30px;
+  	width: 100%;
+  	margin: 30px auto;
+  	border-radius: 7px;
+  }
+
+} */

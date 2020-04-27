@@ -1,0 +1,18 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<!-- Alert Messages -->
+{% include '_alerts.html'%}
+  <h1 class="display-6 text-center">All Class</h1>
+  <ul>
+    {% if classes %}
+      {% for class in classes %}
+      <li class="">{{ class.name }}</li>
+      {% endfor %}
+    {% else %}
+  </ul>
+  <p class="text-center">No classes to display</p>
+  <a class="btn btn-primary text-light" href="{% url 'subjects:newclass' %}">New Class</a>
+  {% endif %}
+  <a class="btn btn-primary text-light mt-3" href="{% url 'subjects:newclass' %}">New Class</a>
+{% endblock %}
